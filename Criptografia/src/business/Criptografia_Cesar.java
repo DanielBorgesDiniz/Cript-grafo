@@ -36,10 +36,13 @@ public class Criptografia_Cesar {
 		for (int i = 0; i < cood.length; i++) {
 
 			int aux2 = cood[i] + valorMovimento;
-			if (aux2 > 25 || aux2 < 0) {
-				int aux3 = 25 - cood[i];
-				aux2 = aux3;
 
+			if (aux2 > 25) {
+				int aux3 = 26 - cood[i];
+				aux2 = valorMovimento - aux3;
+			} else if (aux2 < 0) {
+				int aux3 = 26 + cood[i];
+				aux2 = valorMovimento + aux3;
 			}
 
 			cod[i] = aux2;
