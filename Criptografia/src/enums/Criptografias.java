@@ -2,6 +2,6 @@ package enums;
 
 public enum Criptografias {
 
-	VINEGERE, CESAR;
+	VINEGERE, CESAR, LATINO;
 
 }
