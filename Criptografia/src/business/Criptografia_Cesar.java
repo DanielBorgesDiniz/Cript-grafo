@@ -14,9 +14,13 @@ public class Criptografia_Cesar {
 
 		int x = 0;
 		for (int i = 0; i < co.getMensagem().length(); i++) {
-			for (int j = 0; j < alfabeto.length; j++) {
-				if (alfabeto[j] == aux[i]) {
-					x = j;
+			if (aux[i] == ' ') {
+				x = 27;
+			} else {
+				for (int j = 0; j < alfabeto.length; j++) {
+					if (alfabeto[j] == aux[i]) {
+						x = j;
+					}
 				}
 			}
 			cood[i] = x;
@@ -33,16 +37,20 @@ public class Criptografia_Cesar {
 		int valorMovimento = Integer.parseInt(co.getCHAVE());
 		int[] cod = new int[co.getMensagem().length()];
 
+		int aux2;
 		for (int i = 0; i < cood.length; i++) {
+			if (cood[i] == 27) {
+				aux2 = 27;
+			} else {
+				aux2 = cood[i] + valorMovimento;
 
-			int aux2 = cood[i] + valorMovimento;
-
-			if (aux2 > 25) {
-				int aux3 = 26 - cood[i];
-				aux2 = valorMovimento - aux3;
-			} else if (aux2 < 0) {
-				int aux3 = 26 + cood[i];
-				aux2 = valorMovimento + aux3;
+				if (aux2 > 25) {
+					int aux3 = 26 - cood[i];
+					aux2 = valorMovimento - aux3;
+				} else if (aux2 < 0) {
+					int aux3 = 26 + cood[i];
+					aux2 = valorMovimento + aux3;
+				}
 			}
 
 			cod[i] = aux2;
@@ -58,7 +66,11 @@ public class Criptografia_Cesar {
 		System.out.print("Sua codificação: ");
 
 		for (int i = 0; i < cod.length; i++) {
-			System.out.print(alfabeto[cod[i]]);
+			if (cod[i] == 27) {
+				System.out.print(' ');
+			} else {
+				System.out.print(alfabeto[cod[i]]);
+			}
 		}
 
 	}
