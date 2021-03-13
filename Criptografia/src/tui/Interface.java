@@ -16,8 +16,8 @@ public class Interface {
 		final String CHAVE;
 		CriptObject co;
 		Scanner ler = new Scanner(System.in);
-		System.out.println("\nEscolha o tipo de criptografia desejado:"
-				+ "\n1 - Cifra de Vinegere" + "\n2 - Cifra de Cesar");
+		System.out.println("\nEscolha o tipo de criptografia desejado:" + "\n1 - Cifra de Vinegere"
+				+ "\n2 - Cifra de Cesar" + "\n3 - Cifra AlfaLatina");
 		String escolha = ler.nextLine().toLowerCase();
 
 		// futuramente novos tipos de criptografia serão aceitos
@@ -43,6 +43,12 @@ public class Interface {
 			inserirMensagem(co);
 
 			break;
+
+		case "3":
+		case "alfalatina":
+
+			co = new CriptObject("", null, Criptografias.LATINO);
+			inserirMensagem(co);
 
 		default:
 
@@ -86,7 +92,7 @@ public class Interface {
 		}
 
 		iniciarMenu();
-		
+
 	}
 
 }
