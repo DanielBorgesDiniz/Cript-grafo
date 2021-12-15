@@ -1,2 +1,5 @@
-# Cript-grafo
-Um algoritmo que codifica mensagens digitadas no console usando criptografias já criadas, onde você pode escolher o tipo de código desejado para a codificação. 
+# CriptRun
+Uma aplicação mobile que permite o usuário codificar mensagens usando codigos de criptografia populares, como a cifra de cesar, e mostra como ficaria a mensagem traduzida.
+
+Atualmente é possivel escolher entre dos diferentes tipos de criptografia:
+-cifra de cesar
